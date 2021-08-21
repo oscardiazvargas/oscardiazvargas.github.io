@@ -5,14 +5,12 @@ const anioBisiesto = function (anio) {
     return true;
 }
 
-const obtenerDato = function () {
+const calcular = document.getElementById('calcular');
+
+calcular.addEventListener('click', function () {
     let form = document.forms['myForm'];
     let anio = form.anio.value;
     let bisiesto = anioBisiesto(anio);
-
-    document.getElementById('respuesta').innerHTML = bisiesto ? `<h4>El año: ${anio}, es bisiesto</h4>` :
-        `<h4>El año: ${anio}, no es bisiesto</h4>`;
-    console.log(form);
-}
-
-const limpiar = () => document.getElementById('respuesta').innerHTML = ' ';
+    form.anio.placeholder = bisiesto ? `El año: ${anio}, es bisiesto` + (form.anio.value = ' ') :
+        `El año: ${anio}, no es bisiesto` + (form.anio.value = ' ');
+});
