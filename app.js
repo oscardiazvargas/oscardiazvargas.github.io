@@ -6,6 +6,7 @@ const anioBisiesto = function (anio) {
 }
 
 const calcular = document.getElementById('calcular');
+const borrar = document.getElementById('borrar');
 
 calcular.addEventListener('click', function () {
     let form = document.forms['myForm'];
@@ -14,3 +15,9 @@ calcular.addEventListener('click', function () {
     form.anio.placeholder = bisiesto ? `El año: ${anio}, es bisiesto` + (form.anio.value = ' ') :
         `El año: ${anio}, no es bisiesto` + (form.anio.value = ' ');
 });
+
+borrar.onclick = () => {
+    let form = document.forms['myForm'];
+    form.anio.placeholder = 'Digite el Año:';
+}
+
